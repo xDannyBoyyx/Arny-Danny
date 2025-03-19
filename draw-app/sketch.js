@@ -4,8 +4,6 @@ var toolbox = null;
 var colourP = null;
 var helpers = null;
 
-console.log("works");
-
 function setup() {
 
 	//create a canvas to fill the content div from index.html
@@ -27,6 +25,7 @@ function setup() {
 	toolbox.addTool(new mirrorDrawTool());
 	background(255);
 
+	console.log("works");
 }
 
 function draw() {
