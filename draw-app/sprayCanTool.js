@@ -3,7 +3,7 @@ function sprayCanTool(){
     this.icon = "assets/sprayCan.jpg";
 
     this.points = 13;
-    this.spread = 10;
+    this.spread = 100;
 
     this.draw = function(){
         //if the mouse is pressed paint on the canvas
