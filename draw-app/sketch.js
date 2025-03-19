@@ -24,8 +24,6 @@ function setup() {
 	toolbox.addTool(new sprayCanTool());
 	toolbox.addTool(new mirrorDrawTool());
 	background(255);
-
-	console.log("works");
 }
 
 function draw() {
