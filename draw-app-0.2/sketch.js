@@ -72,11 +72,6 @@ function draw() {
 	//if an object contains a particular method or property
 	//if there isn't a draw method the app will alert the user
 
-	if (!mirrorEnabled){
-		mirrorLine.splice(0,1);
-		console.log(mirrorLine);
-	}
-
 	if (toolbox.selectedTool.hasOwnProperty("draw")) {
 		toolbox.selectedTool.draw();
 	} else {
