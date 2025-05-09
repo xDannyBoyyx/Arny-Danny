@@ -3,12 +3,12 @@ function fillBucketTool(){
 	this.name = "fillTool";
 
 	this.filled = false;
-	
+	// Whatver colour is chosen when the fill tool is chosen that colour will be used to fill.
 	this.draw = function(){
 	if (mouseIsPressed && !this.filled){
 		loadPixels();
 		let targetColor = get(mouseX, mouseY);
-		let fillColor = color(colourP.selectedColour); // using the right palette instance!
+		let fillColor = color(colourP.selectedColour); 
 
 		if (!colorsMatch(targetColor, fillColor)) {
 			floodFill(mouseX, mouseY, targetColor, fillColor);
@@ -16,11 +16,11 @@ function fillBucketTool(){
 		}
 		this.filled = true;
 	} else if (!mouseIsPressed){
-		this.filled = false; // reset after mouse released
+		this.filled = false; 
 	}
 };
 
-	// Utility: check if two colors are "equal"
+	// Check if two colors are equal
 	function colorsMatch(c1, c2){
 		return red(c1) === red(c2) &&
 			   green(c1) === green(c2) &&
@@ -49,7 +49,7 @@ function fillBucketTool(){
 			];
 
 			if (colorsMatch(color(currentColor), targetColor)){
-				// set the new color
+				//Sets the new color
 				pixels[index] = red(fillColor);
 				pixels[index+1] = green(fillColor);
 				pixels[index+2] = blue(fillColor);
