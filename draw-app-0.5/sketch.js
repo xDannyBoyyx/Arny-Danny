@@ -28,6 +28,7 @@ function setup() {
 	toolbox.addTool(new LineToTool());
 	toolbox.addTool(new sprayCanTool());
 	toolbox.addTool(new bubbleTool());
+	toolbox.addTool(new fillBucketTool());
 	// toolbox.addTool(new mirrorDrawTool());
 	mirror = new mirrorDrawTool();
 	background(bgColor);
