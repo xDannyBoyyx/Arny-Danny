@@ -30,6 +30,7 @@ html, body {
 .sideBarItem img{
 	max-height: 50px;
 	max-Width:50px;
+	object-fit: contain; 
 }
 
 .colourPalette{
