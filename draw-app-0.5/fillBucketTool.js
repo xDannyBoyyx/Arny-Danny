@@ -8,7 +8,7 @@ function fillBucketTool(){
 			loadPixels();
 
 			let targetColor = get(mouseX, mouseY);
-			let fillColor = color(currentColour);
+			let fillColor = color(ColourPalette);
 
 			if (!colorsMatch(targetColor, fillColor)) {
 				floodFill(mouseX, mouseY, targetColor, fillColor);
