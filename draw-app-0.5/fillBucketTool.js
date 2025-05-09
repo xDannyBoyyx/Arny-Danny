@@ -2,20 +2,23 @@ function fillBucketTool(){
 	this.icon = "assets/fillBucketTool.jpg";
 	this.name = "fillTool";
 
+	this.filled = false;
+	
 	this.draw = function(){
-		// only run when mouse is pressed
-		if (mouseIsPressed){
-			loadPixels();
+	if (mouseIsPressed && !this.filled){
+		loadPixels();
+		let targetColor = get(mouseX, mouseY);
+		let fillColor = color(colourP.selectedColour); // using the right palette instance!
 
-			let targetColor = get(mouseX, mouseY);
-			let fillColor = color(palette.selectedColour);
-
-			if (!colorsMatch(targetColor, fillColor)) {
-				floodFill(mouseX, mouseY, targetColor, fillColor);
-				updatePixels();
-			}
+		if (!colorsMatch(targetColor, fillColor)) {
+			floodFill(mouseX, mouseY, targetColor, fillColor);
+			updatePixels();
 		}
-	};
+		this.filled = true;
+	} else if (!mouseIsPressed){
+		this.filled = false; // reset after mouse released
+	}
+};
 
 	// Utility: check if two colors are "equal"
 	function colorsMatch(c1, c2){
