@@ -98,3 +98,32 @@ html, body {
 .header {
   background-color: #999;
 }
+// Below is for shapes
+.shapeDropdownContainer {
+	position: relative;
+}
+
+.shapeMainButton {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+
+.shapeDropdown {
+	position: absolute;
+	top: 0;
+	left: 60px;
+	display: none;
+	flex-direction: column;
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 5px;
+	z-index: 10;
+}
+
+.shapeOption {
+	width: 40px;
+	height: 40px;
+	margin: 5px 0;
+	cursor: pointer;
+}
