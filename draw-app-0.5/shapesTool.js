@@ -1,4 +1,4 @@
-function ShapesTool() {
+function shapesTool() {
 	this.icon = "assets/square.jpg";
 	this.name = "shapesTool";
 
