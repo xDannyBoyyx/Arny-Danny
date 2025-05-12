@@ -100,6 +100,7 @@ function ShapesTool() {
 			shapeImg.class("shapeOption");
 			shapeImg.mouseClicked(() => {
 				currentShape = shape;
+				shapeButton.attribute("src", `assets/${shape}.jpg`);
 				dropdown.style("display", "none");
 				isDropdownVisible = false;
 			});
