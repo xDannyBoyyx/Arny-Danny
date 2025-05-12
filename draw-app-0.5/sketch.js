@@ -98,6 +98,7 @@ function draw() {
 	} else {
 		stroke(c);
 	} 
+}
 
 	function mousePressed() {
 	if (toolbox.selectedTool.mousePressed) {
