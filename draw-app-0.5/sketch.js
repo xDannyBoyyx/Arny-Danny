@@ -98,7 +98,19 @@ function draw() {
 	} else {
 		stroke(c);
 	} 
+
+	function mousePressed() {
+	if (toolbox.selectedTool.mousePressed) {
+		toolbox.selectedTool.mousePressed();
+	}
 }
+
+function mouseReleased() {
+	if (toolbox.selectedTool.mouseReleased) {
+		toolbox.selectedTool.mouseReleased();
+	}
+}
+
 
 // Keep just in case VVV - dont think it actually does anything.
 
