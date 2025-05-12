@@ -12,9 +12,10 @@ function ShapesTool() {
 
 	this.draw = function () {
 		if (mouseIsPressed && mouseButton === LEFT && this.startX !== undefined) {
-		
+			push();
 			fill(c);
 			stroke(c);
+			strokeWeight(2);
 			let w = mouseX - this.startX;
 			let h = mouseY - this.startY;
 
@@ -37,6 +38,7 @@ function ShapesTool() {
 					drawArrow(this.startX, this.startY, w, h);
 					break;
 			}
+			pop();
 		}
 	};
 
