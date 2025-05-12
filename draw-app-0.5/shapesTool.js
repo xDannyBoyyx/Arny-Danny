@@ -14,7 +14,7 @@ function ShapesTool() {
 		if (mouseIsPressed && mouseButton === LEFT && this.startX !== undefined) {
 		
 			noFill();
-			stroke(0);
+			stroke(2);
 			let w = mouseX - this.startX;
 			let h = mouseY - this.startY;
 
