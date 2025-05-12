@@ -101,7 +101,7 @@ function ShapesTool() {
 			shapeImg.mouseClicked(() => {
 				currentShape = shape;
 				dropdown.style("display", "none");
-				isDropdownVisible = false;
+				isOpen = false;
 			});
 			dropdown.child(shapeImg);
 		});
