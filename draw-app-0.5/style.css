@@ -99,7 +99,7 @@ html, body {
   background-color: #999;
 }
 /*  Below is for shapes */
-/* .shapeDropdownContainer {
+.shapeDropdownContainer {
 	position: relative;
 }
 
@@ -126,4 +126,4 @@ html, body {
 	height: 40px;
 	margin: 5px 0;
 	cursor: pointer;
-} */
+}
