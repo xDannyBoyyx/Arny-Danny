@@ -29,7 +29,7 @@ function setup() {
 	toolbox.addTool(new sprayCanTool());
 	toolbox.addTool(new bubbleTool());
 	toolbox.addTool(new fillBucketTool());
-	// toolbox.addTool(new shapesTool());
+	toolbox.addTool(new ShapesTool());
 	// toolbox.addTool(new mirrorDrawTool());
 	mirror = new mirrorDrawTool();
 	background(bgColor);
