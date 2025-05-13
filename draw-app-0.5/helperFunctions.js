@@ -29,7 +29,27 @@ function HelperFunctions() {
 			document.getElementById("horizontalLine").style.display = "none";
 		}
 	});
-	// select(".options").html(`
-	// <button id="mirrorToggle">Toggle Mirror</button>
-	// <button id="directionButton">Make Horizontal</button>`);
+
+	select("#traceButton").mouseClicked(function(){
+		if (!trace){
+			showDiv = !showDiv;
+
+			if (showDiv){
+				document.getElementById("traceDiv").style.display = "grid";
+			} else {
+				document.getElementById("traceDiv").style.display = "none";
+			}
+	
+		} else {
+			alert("There is already an image to trace. Otherwise try again.")
+		}
+	});
+
+	/*show a box in the center of the screen saying "input file" and code it in to allow image file types.
+
+	make it display the image onto the canvas but with a low opacity so that it can be traced.
+	*/
+
+	// Think about adding a gradient button that allows for the user to draw lines with gradients but works for any tool.
+	// use lerp per chance or what you did for color palettes in graphics. Figure out how to choose two colors from the color palette.
 }

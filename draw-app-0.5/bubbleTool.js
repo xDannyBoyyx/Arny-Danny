@@ -12,19 +12,14 @@ function bubbleTool(){
         if(mouseIsPressed){
             noFill();
 
-            // for(var i = 0; i < this.points-12; i++){
-                // point(random(mouseX-this.spread, mouseX + this.spread), 
-                //     random(mouseY-this.spread, mouseY+this.spread));
-                circle(random(mouseX-this.spread, mouseX + this.spread), 
-                    random(mouseY-this.spread, mouseY+this.spread), this.points);
-            // }
+            circle(random(mouseX-this.spread, mouseX + this.spread), 
+                random(mouseY-this.spread, mouseY+this.spread), this.points);
+
 
             if(mirrorEnabled){
                 mirror.draw(() => {
-                    // for(var i = 0; i < this.points; i++){
-                        circle(random(mouseX-this.spread, mouseX + this.spread), 
-                            random(mouseY-this.spread, mouseY+this.spread), this.points);
-                    // }
+                    circle(random(mouseX-this.spread, mouseX + this.spread), 
+                        random(mouseY-this.spread, mouseY+this.spread), this.points);
                 });
             }
         }

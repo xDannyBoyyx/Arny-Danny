@@ -2,17 +2,17 @@
 // and the helper functions.
 var toolbox = null;
 var colourP = null;
-var c = 0;
 var helpers = null;
 var mirrorEnabled = false;
-var mirrorLine = [];
+var showDiv = false;
+var trace = false;
+var c = 0;
 var bgColor = 255;
-var message;
 
 function setup() {
 	//create a canvas to fill the content div from index.html
 	canvasContainer = select('#content');
-	var c = createCanvas(canvasContainer.size().width, canvasContainer.size().height);
+	var c = createCanvas(canvasContainer.size().width + 15, canvasContainer.size().height);
 	c.parent("content");
 
 	//create helper functions and the colour palette
@@ -28,8 +28,6 @@ function setup() {
 	toolbox.addTool(new LineToTool());
 	toolbox.addTool(new sprayCanTool());
 	toolbox.addTool(new bubbleTool());
-	toolbox.addTool(new fillBucketTool());
-	toolbox.addTool(new ShapesTool());
 	// toolbox.addTool(new mirrorDrawTool());
 	mirror = new mirrorDrawTool();
 	background(bgColor);
@@ -59,34 +57,61 @@ function setup() {
 	}
 
 	push();
+		options = document.getElementById('options');
+
+		// fill(255,255,0);
+		// textSize(15);
+
+		// brushSize = createSlider(1,75,1);
+		// brushSize.parent(select('.box options'));
+		// brushSize.position(310,620);
+		
+		brushSize = document.createElement('input');
+		brushSize.type = 'range';
+		brushSize.min = 1;
+		brushSize.max = 75;
+		brushSize.value = 1;
+		brushSize.id = 'brushSize';
+
 		message = createP();
 		message.parent(select('.box options'));
-		message.style('margin-top', '-0px');
-		message.style('margin-left', '14px');
-		message.style('color', 'white');
-		// message.style('text-align', 'center');
-		message.style('font-size', '16px');
-		message.style('font-family', 'sans-serif');
-		
-		fill(255,255,0);
-		textSize(15);
-		brushSize = createSlider(1,75,1);
-		brushSize.parent(select('.box options'));
-		brushSize.position(310,620);
+		options.appendChild(brushSize);
+		message.style('padding-top', '4.5%');
+		message.style('position', 'relative');
+		message.style('right', '4.5%');
+		message.style('font-family', '"Comic-Relief", system-ui');
+		message.style('display', 'flex');
+		message.style('justify-content', 'center');
+		message.style('align-items', 'center');
+		message.style('-webkit-text-stroke', '0.25px black')
+
+		one = color(130, 153, 153);
+		two = color(50, 234, 233);
 	pop();	
 }
 
 function draw() {
 	push();
-		message.html(`Brush size: ${brushSize.value()}`);
+		font = map(brushSize.value, 1, 75, 20, 30);
+		message.style('font-size', font + "px");
+
+		rangeWidth = map(brushSize.value, 1, 75, 90, 100);
+		document.getElementById("brushSize").style.width = rangeWidth + "%";
+		document.getElementById("brushSize").style.right = rangeWidth/30 + "%";
+
+		percent = map(brushSize.value, 1, 75, 0, 1);
+		fontColor = lerpColor(one, two, percent)
+		message.style('color', fontColor);
+
+		message.html(`Brush size: ${brushSize.value}`);
 	pop();
-	strokeWeight(brushSize.value());
+
+	strokeWeight(brushSize.value);
 
 	//call the draw function from the selected tool.
 	//hasOwnProperty is a javascript function that tests
 	//if an object contains a particular method or property
 	//if there isn't a draw method the app will alert the user
-
 	if (toolbox.selectedTool.hasOwnProperty("draw")) {
 		toolbox.selectedTool.draw();
 	} else {
@@ -99,31 +124,3 @@ function draw() {
 		stroke(c);
 	} 
 }
-
-	function mousePressed() {
-	if (toolbox.selectedTool.mousePressed) {
-		toolbox.selectedTool.mousePressed();
-	}
-}
-
-function mouseReleased() {
-	if (toolbox.selectedTool.mouseReleased) {
-		toolbox.selectedTool.mouseReleased();
-	}
-}
-
-
-// Keep just in case VVV - dont think it actually does anything.
-
-// function drawLine(){
-// 	push();
-// 	strokeWeight(3);
-// 	stroke("red");
-
-// 	if (this.axis == "x"){
-// 		line(width / 2, 0, width / 2, height);
-// 	} else {
-// 		line(0, height / 2, width, height / 2);
-// 	}
-// 	pop();
-// }

@@ -53,6 +53,9 @@ function ColourPalette() {
 			select("#" + colourID).style("background-color", this.colours[i]);
 			colourSwatch.mouseClicked(colourClick);
 		}
+		
+		// When the gradient button is on, make a duplicate of the palette so that one can be for the start and the other
+		// for the end of the gradient.
 
 		select(".colourSwatches").style("border", `3px solid ${self.colours[17]}`);
 	};
