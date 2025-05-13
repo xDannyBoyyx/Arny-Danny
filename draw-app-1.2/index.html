@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="lib/p5.min.js"></script>
+
+    <script src="sketch.js"></script>
+
+    <!-- add extra scripts below -->
+    <script src="toolbox.js"></script>
+    <script src="colourPalette.js"></script>
+    <script src="helperFunctions.js"></script>
+    <script src="traceFunctions.js"></script>
+
+    <script src="freehandTool.js"></script>
+    <script src="eraserTool.js"></script>
+    <script src="lineToTool.js"></script>
+    <script src="sprayCanTool.js"></script>
+    <script src="bubbleTool.js"></script>
+    <script src="mirrorDrawTool.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  	<div class="wrapper">
+      <div class="box header">My Drawing App
+        <button id="clearButton">Clear</button>
+        <button id="saveImageButton">Save Image</button>
+        <button id="mirrorButton">Mirror</button>
+        <button id="directionButton">Make Horizontal</button>
+        <button id="traceButton">Trace Image</button>
+        <button id="traceRemove">Remove trace image</button>
+        <!-- <button id="layerButton">Layers</button> -->
+      </div>
+
+      <div class="box" id="sidebar"></div>
+      <div id="content">
+        <div id="horizontalLine"></div>
+        <div id="verticalLine"></div>
+        <div id="traceDiv">
+          <strong>Upload image file ↓</strong>
+          <em>Upload an image that you would want to trace! :D</em>
+          <div id="dropFile" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+            <img src="assets/logo.png" alt="Image silhouette of downloading">
+            <input type="file" id="fileInput" style="display:none;" accept=".png,.jpg,.jpeg,.gif,.pdf">
+            <p>Drag and drop a file or <button onclick="document.getElementById('fileInput').click();">choose a file</button></p>
+          </div>
+        </div>
+        <!-- <div id="layerDiv"></div> -->
+      </div>
+
+      <div class="box colourPalette"></div>
+      
+      <div class="box options" id="options"></div>
+  	</div>
+  </body>
+</html>
