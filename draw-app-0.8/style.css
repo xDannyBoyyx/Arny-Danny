@@ -1,0 +1,129 @@
+html, body {
+  margin: 0px;
+  height: 100%;
+}
+
+#sidebar {
+	grid-area: sidebar;
+	overflow-y: scroll;
+}
+
+#content {
+	grid-area: content;
+}
+
+.header {
+	grid-area: header;
+	font-family: Helvetica, sans-serif
+}
+
+.footer{
+  grid-area: footer;
+}
+
+.sideBarItem{
+	max-height: 50px;
+	max-width: 50px;
+	padding:5px;
+}
+
+.sideBarItem img{
+	height: 50px;
+	width: 50px;
+	object-fit: contain; 
+}
+
+.colourPalette{
+	grid-area: colourP;
+	display:flex;
+	flex-direction:grid;
+	flex-flow: wrap;
+}
+
+.options{
+	grid-area: options;
+	padding: 15px;
+}
+
+.colourSwatches{
+	box-sizing: border-box;
+	width: 40px;
+	height: 40px;
+	max-height: 40px;
+	max-width: 40px;
+	margin: 5px;
+}
+
+.wrapper {
+	position: relative;
+	display: grid;
+	height: 100%;
+	grid-template-columns: 70px 230px  minmax(500px, 1fr);
+	grid-template-rows: 35px minmax(500px, 1fr) 160px;
+	grid-template-areas:
+			"header header header"
+			"sidebar content content"
+			"colourP colourP options";
+	background-color: #fff;
+	color: #444;
+}
+
+#directionButton {
+	display: none;
+} 
+
+.box {
+  overflow: hidden;
+  background-color: #444;
+  color: #fff;
+  font-size: 150%;
+}
+
+#verticalLine{
+	border-left: 6px solid red;
+	height: 73.5%;
+	margin-left: 47%;
+	position:absolute;
+	display:none;
+}
+
+#horizontalLine{
+	border-bottom: 6px solid red;
+	width: 94.5%;
+	margin-top: 17.5%;
+	position:absolute;
+	display:none;
+}
+
+.header {
+  background-color: #999;
+}
+/*  Below is for shapes */
+.shapeDropdownContainer {
+	position: relative;
+}
+
+.shapeMainButton {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+
+.shapeDropdown {
+	position: absolute;
+	top: 0;
+	left: 60px;
+	display: none;
+	flex-direction: column;
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 5px;
+	z-index: 10;
+}
+
+.shapeOption {
+	width: 40px;
+	height: 40px;
+	margin: 5px 0;
+	cursor: pointer;
+}
